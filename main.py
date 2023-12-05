@@ -61,9 +61,7 @@ while game_is_on:
     else:
         tim.goto(0, 0)
         tim.color("green")
-        red.write("You won! Congradulations!", align='center', font=('Arial', 30, 'bold'))
+        red.write("You won! Congratulations!", align='center', font=('Arial', 30, 'bold'))
         time.sleep(3)
         red.clear()
         game_is_on = False
-
-
