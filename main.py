@@ -31,11 +31,8 @@ while game_is_on:
     if len(correct_list) != 50:
         answer_state = str(screen.textinput(title=f"{len(correct_list)}/50 States Correct",
                                             prompt="What's a state's name?")).title()
-        if answer_state== "Exit":
-            missed_list = []
-            for state in states:
-                if state not in correct_list:
-                    missed_list.append(state)
+        if answer_state == "Exit":
+            missed_list = [state for state in states if state not in correct_list]
 
             missed_states_csv = pd.DataFrame(missed_list)
             missed_states_csv.to_csv("missed_states.csv")
